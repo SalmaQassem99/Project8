@@ -100,7 +100,9 @@
 
   &.pause {
     position: absolute;
-    top: 85%;
+    top: 65%;
+    left: 0;
+    transform: translateX(50%);
   }
 }
 
@@ -343,6 +345,7 @@
 
   .body {
     flex-grow: 1;
+    position: relative;
 
     .items {
       .cards {
@@ -361,18 +364,6 @@
             position: relative;
             background-color: $white-1;
             box-shadow: 0 0.25rem 0.25rem 0 $shadow-1;
-
-            &::before {
-              content: "";
-              width: 85%;
-              height: 100%;
-              position: absolute;
-              left: 50%;
-              bottom: -5%;
-              z-index: -1;
-              transform: translateX(-50%);
-              background-color: $pink-5;
-            }
 
             &::after {
               content: "";
@@ -408,7 +399,34 @@
 
           &:nth-of-type(2) {
             .img-wrapper {
-              //transform: rotate(-6.7deg);
+              transform: rotate(-6.7deg);
+              &::after {
+                border-color: $red-1;
+              }
+            }
+          }
+          &:nth-of-type(3) {
+            .img-wrapper {
+              transform: rotate(9.35deg);
+              &::after {
+                border-color: $green-2;
+              }
+            }
+          }
+          &:nth-of-type(4) {
+            .img-wrapper {
+              transform: rotate(-2.27deg);
+              &::after {
+                border-color: $orange-2;
+              }
+            }
+          }
+          &:nth-of-type(5) {
+            .img-wrapper {
+              transform: rotate(6.41deg);
+              &::after {
+                border-color: $pink-5;
+              }
             }
           }
         }
@@ -422,7 +440,7 @@
           border: 0.3125rem solid $purple-1;
           box-shadow: 0 0.25rem 0.25rem $shadow-1;
           visibility: hidden;
-
+          cursor: pointer;
           &.visible {
             visibility: visible;
           }
@@ -491,12 +509,14 @@
       background-color: $orange-1;
 
       .text-card {
-        background: linear-gradient(#fdeece80 0%,
-            #fdeece80 40%,
-            transparent 40%,
-            transparent 60%,
-            #fdeece80 60%,
-            #fdeece80 100%);
+        background: linear-gradient(
+          #fdeece80 0%,
+          #fdeece80 40%,
+          transparent 40%,
+          transparent 60%,
+          #fdeece80 60%,
+          #fdeece80 100%
+        );
         transform: rotate(-1deg);
         color: $black-2;
         font-size: 5vw;
